@@ -1,0 +1,547 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+  margin: 0;
+  font-size: 1em;
+  font-family:
+    Source Sans Pro Web,
+    Helvetica Neue,
+    Helvetica,
+    Roboto,
+    Arial,
+    sans-serif;
+}
+
+.inner {
+  padding: 0 5%;
+}
+
+.left {
+  float: left;
+}
+
+.gap {
+  margin-right: 10px;
+}
+
+#top-grey {
+  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
+  min-height: 0;
+  background-color: #f0f0f0;
+}
+
+#arrow {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+}
+
+#arrow[aria-expanded="false"] {
+  background-image: url(../img/arrow-down.svg);
+}
+#arrow[aria-expanded="true"] {
+  background-image: url(../img/arrow-up.svg);
+}
+
+#top-grey-exp {
+  background-color: #f0f0f0;
+  height: auto;
+}
+
+.col-50 {
+  width: 50%;
+  float: left;
+  line-height: 1.5em;
+}
+.no-marg {
+  margin: 0;
+}
+.pad-4 {
+  padding: 4%;
+}
+.pad-2 {
+  padding: 2%;
+}
+#col-main .pad-2 {
+  padding: 2% 2% 0px 2%;
+}
+.clear {
+  clear: both;
+}
+.img10 {
+  width: 10%;
+  height: auto;
+}
+#title-area {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 0;
+  vertical-align: middle;
+}
+.title {
+  font-size: 3em;
+}
+#logo {
+  width: 290px;
+  height: auto;
+  margin-right: 30px;
+  vertical-align: middle;
+}
+#logo2 {
+  /* added for USNO logo and increased margins */
+  width: 211px;
+  height: auto;
+  margin-left: 30px;
+  vertical-align: middle;
+}
+#clock-utc {
+  border: solid 1px #000;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.ital {
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 15px !important;
+}
+
+#myDate {
+  margin-top: 15px;
+}
+#myTime {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.imgSmText {
+  font-size: 0.7em;
+  line-height: 1.5em;
+  text-transform: uppercase;
+}
+#rightColBot a {
+  display: block;
+  margin-bottom: 10px;
+  color: #000;
+}
+#rightColBot {
+  display: block;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #000;
+}
+.text-xs {
+  font-size: 0.8em;
+  margin: 5px 10px 0;
+}
+.text-lg {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin: 0 10px;
+}
+#callout-bar {
+  color: #fff;
+  background-color: #999;
+  padding: 0.25rem 0;
+  text-align: center;
+  font-weight: bold;
+}
+#callout-bar p {
+  margin: 0;
+}
+
+#content {
+  display: table;
+  width: 100%;
+}
+#col-left {
+  width: 15%;
+  background-color: #d9e8f6;
+  display: table-cell;
+}
+#col-main {
+  width: 70%;
+  display: table-cell;
+  position: relative;
+}
+
+#col-right {
+  width: 15%;
+  background-color: #e2e2e2;
+  display: table-cell;
+  position: relative;
+}
+.col-25 {
+  width: 25%;
+  float: left;
+}
+
+#noncontTitle,
+#contTitle {
+  display: none;
+}
+
+#pr-lt {
+  display: none;
+}
+
+/*
+	STYLES FOR CLOCK AREAS
+*/
+.clock-box {
+  margin-bottom: 15px;
+}
+#col-main .clock-box {
+  margin-bottom: 0;
+}
+.clock-box .title {
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: bold;
+  /*color: #000000 !important;*/
+}
+.sub-title {
+  text-transform: uppercase;
+  font-size: 0.7em;
+  margin-bottom: 5px;
+}
+.time-display {
+  display: table;
+  width: 90%;
+}
+.color-area {
+  width: 5%;
+  display: table-cell;
+}
+
+.time-text {
+  background-color: #000;
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.4em;
+  padding: 5px;
+  display: table-cell;
+}
+.side-img {
+  max-width: 90%;
+  display: block;
+  margin: 0 auto 15px;
+}
+.margTop15 {
+  margin-top: 15px;
+}
+#twenty-hour {
+  float: left;
+}
+#main-time-area {
+  background-color: #000;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  padding: 15px 0;
+}
+.full-img {
+  width: 94.5%;
+  display: block;
+  margin: 0 2.3%;
+}
+#mainland {
+  position: relative;
+}
+#az-clock {
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  left: 5%;
+}
+.hours-wrapper {
+  padding: 5px;
+  background: #eee;
+  margin-bottom: 15px;
+}
+.striped-box {
+  max-height: 0.75rem;
+  max-width: 0.75rem;
+}
+#analog-clock {
+  max-width: 90%;
+}
+
+#responseTime {
+  display: none;
+}
+
+/* CUSTOM CHECKBOX STYLES */
+input[type="checkbox"].css-checkbox {
+  position: absolute;
+  z-index: -1000;
+  left: -1000px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+input[type="checkbox"].css-checkbox + label.css-label {
+  padding-left: 20px;
+  height: 15px;
+  display: inline-block;
+  line-height: 15px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  font-size: 0.7em;
+}
+
+input[type="checkbox"].css-checkbox:checked + label.css-label {
+  background-position: 0 -15px;
+}
+
+label.css-label {
+  background-image: url(../img/csscheckbox.png);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.no-saving {
+  background-image: url(../img/diagonal-white.png);
+}
+.blue .color-area {
+  background-color: #0060a8;
+}
+.blue .title {
+  color: #0060a8;
+}
+.purple .color-area {
+  background-color: #aa378d;
+}
+.purple .title {
+  color: #aa378d;
+}
+.dk-blue .color-area {
+  background-color: #1b0459;
+}
+.dk-blue .title {
+  color: #1b0459;
+}
+.orange .color-area {
+  background-color: #d66733;
+}
+.orange .title {
+  color: #d66733;
+}
+.green .color-area {
+  background-color: #63a952;
+}
+.green .title {
+  color: #63a952;
+}
+.yellow .color-area {
+  background-color: #e6a730;
+}
+.yellow .title {
+  color: #e6a730;
+}
+.red .color-area {
+  background-color: #cc2131;
+}
+.red .title {
+  color: #cc2131;
+}
+
+/* 	///////////////////////////////////////////////////////////
+	////////////////////// RESPONSIVE STYLES //////////////////
+	///////////////////////////////////////////////////////////
+*/
+
+@media only screen and (min-width: 300px) and (max-width: 1260px) {
+  .title {
+    font-size: 2em; /* was 1.8 */
+  }
+  #content {
+    display: flex;
+    flex-flow: wrap;
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-flow: wrap; /* Safari 6.1+ */
+  }
+
+  #col-main {
+    width: 100%;
+    display: block;
+    order: 1;
+    margin-bottom: 15px;
+  }
+  #col-left {
+    width: 70%;
+    display: block;
+    order: 2;
+  }
+  #noncontTitle,
+  #contTitle {
+    display: block;
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+  #col-right {
+    width: 30%;
+    display: block;
+    order: 3;
+  }
+
+  #main-time-area {
+    display: block;
+    margin: 0 auto;
+    padding: 15px 0;
+  }
+  #ak-col,
+  #hi-col {
+    width: 50%;
+    float: left;
+  }
+
+  #pr-lt {
+    display: block;
+  }
+
+  #pr-rt {
+    display: none;
+  }
+
+  #rightColBot {
+    border-top: 1px solid #000;
+    margin-top: 30px;
+    position: relative;
+    padding-top: 15px;
+  }
+
+  .clock-box .title {
+    font-size: 1em;
+    line-height: 1em;
+  }
+
+  .sub-title {
+    font-size: 0.7em;
+  }
+
+  .time-text {
+    font-size: 1.2em;
+  }
+
+  .text-xs {
+    font-size: 1em;
+  }
+
+  input[type="checkbox"].css-checkbox + label.css-label {
+    font-size: 1em;
+  }
+
+  .imgSmText {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 740px) {
+  .title {
+    font-size: 2.1em; /* was 2.3 */
+  }
+  #content {
+    display: flex;
+    flex-flow: wrap;
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-flow: wrap; /* Safari 6.1+ */
+  }
+
+  #col-main {
+    width: 100%;
+    display: block;
+    order: 1;
+    margin-bottom: 15px;
+  }
+  #col-left {
+    width: 70%;
+    display: block;
+    order: 2;
+  }
+  #noncontTitle,
+  #contTitle {
+    display: block;
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+  #col-right {
+    width: 30%;
+    display: block;
+    order: 3;
+  }
+
+  #main-time-area {
+    display: block;
+    margin: 0 auto;
+    padding: 15px 0;
+  }
+  #ak-col,
+  #hi-col {
+    width: 50%;
+    float: left;
+  }
+
+  #pr-lt {
+    display: block;
+  }
+
+  #pr-rt {
+    display: none;
+  }
+
+  #rightColBot {
+    border-top: 1px solid #000;
+    margin-top: 30px;
+    position: relative;
+    padding-top: 15px;
+  }
+
+  .clock-box .title {
+    font-size: 1.5em;
+    line-height: 1em;
+  }
+
+  .sub-title {
+    font-size: 1em;
+  }
+
+  .time-text {
+    font-size: 1.6em;
+  }
+
+  .text-xs {
+    font-size: 1.2em;
+  }
+
+  input[type="checkbox"].css-checkbox + label.css-label {
+    font-size: 1.2em;
+  }
+
+  .imgSmText {
+    font-size: 1em;
+  }
+}
+
+/* 	///////////////////////////////////////////////////////////
+	///////  STYLES AND DESIGN USED WITH PERMISSION   /////////
+	///////////////// MORGANFEBREY.COM ////////////////////////
+	///////////////////////////////////////////////////////////
+*/
