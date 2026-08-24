@@ -1,0 +1,55 @@
+name: Upstream time.gov Tracker
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # Runs weekly on Sunday at 00:00 UTC
+  workflow_dispatch: # Allows manual triggers from GitHub UI
+
+jobs:
+  check-upstream:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js (for formatting)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Mirror time.gov source
+        run: |
+            # Wipe previous download to clear old hashed JS filenames
+            rm -rf upstream
+            mkdir -p upstream
+            # Mirror time.gov while ignoring external CDNs
+            wget \
+                --recursive \
+                --level=2 \
+                --page-requisites \
+                --adjust-extension \
+                --domains=time.gov \
+                --no-host-directories \
+                --directory-prefix=upstream \
+                --no-parent \
+                --quiet \
+                https://time.gov/
+
+      - name: Format code for readable PR diffs
+        run: |
+          npx prettier --write "upstream/**/*.{html,css,js,json}" || true
+
+      - name: Create Pull Request if changes exist
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore(upstream): update time.gov source snapshot"
+          branch: upstream-updates
+          title: "Upstream Sync: time.gov changes detected"
+          body: |
+            Automated weekly check detected changes in upstream source code on `time.gov`.
+            Review the diff to inspect incoming features or bug fixes.
+          delete-branch: true
