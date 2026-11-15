@@ -71,7 +71,7 @@ timeDotGov.clockController.dsClock.doRequest = function () {
   ///////////////////////////////////////////////////////////////////////////////////
   xmlHttp.open(
     "GET",
-    "/zzz__cf531feb08f27f7e62c37402ab35fecb6c64933e.cgi?disablecache=" +
+    "/zzz__a488368fede6a4f6af987757331e9d095b79c293.cgi?disablecache=" +
       d.getTime(),
     false,
   );
